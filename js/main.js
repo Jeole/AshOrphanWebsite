@@ -1,6 +1,6 @@
 // Closes the Responsive Menu on Menu Item Click
 $('.navbar-collapse  a').click(function() {
-	console.log("test");
+
     $('.navbar-toggler:visible').click();
 });
 
