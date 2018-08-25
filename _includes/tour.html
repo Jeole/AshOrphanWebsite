@@ -3,14 +3,18 @@
 		<div class="row no-gutters">
 			<div class="text-center">
 				<h1 class="text-uppercase mb-5">Tour</h1>
+				{% assign concerts = site.concerts %}
+				{% if concerts != empty %}
+					{% for concert in concerts %}
+						<p> {{ concert.date | date: "%d/%m/%y %H:%M" }} - {{ concert.place }} </p>
+					{% endfor %}
+				{% else %}
 				<p>no tour scheduled</p>
-
+				{% endif %}
 				
 			</div>
 		</div>
-		
 	</div>
-	
 </section>
 
 
