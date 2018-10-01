@@ -3,24 +3,10 @@
 
 {% include head.html %}
 
-<body id="page-top" data-spy="scroll"  data-offset="200">
+<body id="{{page.body_class}}" data-spy="scroll"  data-offset="200" class="d-flex flex-column">
   {% include nav.html %}
-  {% include header.html %}
-  {% include bio.html %}
-  {% include tour.html %}
-  {% include music.html %}
-  {% include contact.html %}
-
-{% comment %}
-  {% include call-to-action.html %}
-  {% include services.html %}
-  {% include portfolio.html %}
-  {% include feature.html %}
-  {% include quote.html %}
-  {% include aside.html %}
-  {% include contact.html %}
   
-  {% endcomment  %}
+  {{ content }}
   
   {% include scripts.html %}
 </body>

@@ -1,26 +1,38 @@
 <head>
 
-    <meta charset="utf-8">
+	<meta charset="UTF-8">	
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+   
+	<meta http-equiv="Content-Language" content="{{page.lang}}">
 
     <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-
-	<!-- to make into site/page parameters -->
-	<meta charset="UTF-8">	
-	<title>Ash Orphan</title>
-	<meta name="description" content="Site web d'Ash Orphan" />
+	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description[page.lang] }}{% endif %}">
 	
-	<meta property="og:title" content="Ash Orphan" />
+	<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
 	<meta property="og:type" content="Website" />
-	<meta property="og:description" content="Site web d'Ash Orphan">
-	<meta property="og:url" content="https://jeole.github.io/AshOrphanWebsite" />
-	<!-- <meta property="og:image" content="" /> -->
+	<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description[page.lang] }}{% endif %}">
+	<meta property="og:url" content="{{site.url}}" />
+	<meta property="og:locale" content="{{site.data.translations[page.lang]._locale}}" />
+	<meta property="og:image" content="{{site.url}}/img/social/og-image-square.jpg">
+	<meta property="og:image:width" content="279">
+	<meta property="og:image:height" content="279">
+	
+	<!-- alternate languages -->
+	{% assign pageslang=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+	{% for pagelang in pageslang %}
+		<link rel="alternate" hreflang="{{ pagelang.lang }}" href="{{ pagelang.url }}" />
+	{% endfor %}
 
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="icon" type="image/jpeg" href="/img/favicon/favicon.jpg" />
+	
+	<!-- css -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
+	<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+		
+	<link rel="stylesheet" type="text/css" href="{{ site.url }}/css/main.css" />
+	
+	<!-- HTML5 player -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.9/mediaelementplayer.min.css" />
 </head>

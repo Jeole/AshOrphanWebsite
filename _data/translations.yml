@@ -1,0 +1,14 @@
+en:
+    _locale: en_US
+    _lang_name: "English"
+    bio: "Biography"
+    music: "Music"
+    video: "Video"
+    contact: "Contact"
+fr:
+    _locale: fr_FR
+    _lang_name: "Français"
+    bio: "Biographie"
+    music: "Musique"
+    video: "Vidéo"
+    contact: "Contact"

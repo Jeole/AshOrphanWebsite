@@ -1,65 +1,138 @@
 
 body {
     width: 100%;
-    height: 100%;
+    min-height:100vh;
 
-    
+    font-family: 'EB Garamond', serif, Lora,"Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	color: #ffffff !important;
 	background-color: black;
+	min-height:100vh;
 }
 
 html {
     width: 100%;
-    height: 100%;
 }
 
-section{
-	background-color: black;
-}
-#page-top{
+.main-content{
 	
-	font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #ffffff;
+	padding:50px 0;
 }
-
 
 #header{
-	background: url(../img/03.jpg) no-repeat center center scroll;
+	background: linear-gradient(
+				  rgba(0, 0, 0, 0.2), 
+				  rgba(0, 0, 0, 0.2)
+				), 
+				url(../img/07.jpg) no-repeat center center scroll;
 	background-size: cover;
-    height:100vh;
-	padding:100px 0;
-
 }
 
 #bio{
-
-	background: black;
-	padding:100px 0;
+	background: rgb(114, 123, 111);
 }
 
 #music{
-	padding:100px 0;
+	background: rgb(183, 161, 149);
 }
 
-#tour{
-	background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.5), rgba(0,0,0,0.3)),
-    url(../img/05.jpg) no-repeat center center scroll;
-	
-	background-size: cover;
-	padding:100px 0;
+#video{
+	background: rgb(64, 75, 79);
 }
 
 #contact{
-	padding:100px 0;
+
+	background-image: linear-gradient(
+				  rgba(0, 0, 0, 0.2), 
+				  rgba(0, 0, 0, 0.2)
+				), url(../img/contactbg.jpg);
+	background-attachment: scroll;
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
+
 }
 
-
-.img-bio {
-  object-fit: cover; /* Do not scale the image */
-  object-position: center; /* Center the image within the element */
-  width: 100%;
-  height:250px;
-  margin-bottom: 1rem; 
+#brand{
+	font-size: 1.5rem;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0;
 }
+
+.underline-separator{
+    content: ''; 
+	bottom: 0; 
+	left: 30%; 
+	right: 30%; 
+	height: 2px; 
+	background: white; 
+	display: block; 
+	width: 10vw; 
+	position: static; 
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 0vw;
+	min-width:10px;
+}
+
+#header-title{
+	font-size: 3rem;
+}
+
+.img-bio{
+	width:27.5vw;
+	height:100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.separator-bio{
+	height:50px;
+}
+
 #imgs-bio{
 	width:60vw;
+}
+
+p.bio{
+	text-indent: 5vw;
+	vertical-align: top;
+}
+
+.line-separator{
+	height:1px;
+	background:white;
+	border-bottom:2px solid white;
+	margin: 1vw 0px;
+}
+
+img.release-cover{
+	max-width: 80vw;
+	width:450px;
+}
+
+.social-media-icon{
+	color:#FFFFFF;
+	font-size: 25px;
+	font-weight: 1
+}
+
+.social-media-icon:hover{
+	color:#CCCCCC;
+}
+
+/* bootstrap override */
+.btn{
+	border-width: 2px !important; 
+}
+.btn:hover, .btn:focus, .btn:active, .btn.active, .open>.dropdown-toggle.btn {
+	font-weight:bold;
+    color: white !important;
+    background-color: transparent !important;
+    border-color: white !important;
+	
+}
+
+.nav-item:not(.active) > a.nav-link{
+	color:#DADADA ;
 }

@@ -1,15 +1,44 @@
-<nav class="container navbar navbar-expand-lg navbar-dark  bg-transparent  text-center  fixed-top ">
-  <a class="navbar-brand text-light scroll-link" href="#header">Ash Orphan</a>
-  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link scroll-link" href="#bio">Bio</a>
-      <a class="nav-item nav-link scroll-link" href="#tour">Tour</a>
-	  <a class="nav-item nav-link scroll-link" href="#music">Music</a>
-      <a class="nav-item nav-link scroll-link" href="#contact">contact</a>
-    </div>
-  </div>
-  
+
+<nav class="navbar navbar-expand-md  justify-content-between navbar-dark bg-transparent align-text-bottom text-center">
+    <div class="container-fluid">
+        
+        <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0 justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item {% if page.lang-ref == 'bio' %}active{% endif %}">
+                    <a class="nav-link mx-4" href="bio">{{ site.data.translations[page.lang].bio }}</a>
+                </li>
+                <li class="nav-item {% if page.lang-ref == 'music' %}active{% endif %}">
+                    <a class="nav-link mx-4" href="music.html">{{ site.data.translations[page.lang].music }}</a>
+                </li>
+            </ul>
+        </div>
+        <a href="./" class="navbar-brand d-block text-center order-0 order-md-1 w-auto {% if page.url == '/' %} active {% endif %} mx-2" id="brand">Ash Orphan</a>
+        <div class="navbar-collapse collapse dual-nav w-50 order-2 justify-content-start">
+            <ul class="nav navbar-nav">
+                <li class="nav-item {% if page.lang-ref == 'video' %}active{% endif %}">
+                    <a class="nav-link mx-4" href="video.html">{{ site.data.translations[page.lang].video }}</a>
+                </li>
+                <li class="nav-item {% if page.lang-ref == 'contact' %}active{% endif %} ">
+                    <a class="nav-link mx-4" href="contact.html">{{ site.data.translations[page.lang].contact }}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+				<div class="underline-separator d-md-none"></div>
+				{% assign pageslang=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+				{% if pageslang.size > 1 %}
+					{% for pagelang in pageslang %}
+						{% if forloop.first == false %}
+						<span class="navbar-text d-none d-md-flex">/</span>
+						{% endif %}
+						<li class="nav-item {% if pagelang.lang == page.lang%}active{% endif %}">
+							<a href="{{ site.base-url }}{{ pagelang.url }}" class="nav-link" title="View in {{pagelang.lang}}">{{ site.data.translations[pagelang.lang]._lang_name }}</a>
+						</li>
+					{% endfor %}
+				{% endif %}
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
 </nav>
