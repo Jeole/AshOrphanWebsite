@@ -81,18 +81,20 @@ html {
 
 .img-bio{
 	width:27.5vw;
+	max-width:48%;
 	height:100%;
 	object-fit: cover;
 	object-position: center;
+}
+
+#img-bio2{
+	max-height:450px;
 }
 
 .separator-bio{
 	height:50px;
 }
 
-#imgs-bio{
-	width:60vw;
-}
 
 p.bio{
 	text-indent: 5vw;
