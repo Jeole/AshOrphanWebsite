@@ -123,6 +123,11 @@ img.release-cover{
 	color:#CCCCCC;
 }
 
+.video{
+	width:800px;
+	max-width:100vw;
+}
+
 /* bootstrap override */
 .btn{
 	border-width: 2px !important; 
@@ -137,4 +142,12 @@ img.release-cover{
 
 .nav-item:not(.active) > a.nav-link{
 	color:#DADADA ;
+}
+
+.nav-item.active > a.nav-link{
+	font-weight:bold;
+}
+
+.navbar-nav > .nav-item > a.nav-link:hover{
+	color:#FFFFFF ; 
 }

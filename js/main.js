@@ -27,6 +27,7 @@ $('video, audio').mediaelementplayer({
 	pluginPath: 'https://cdnjs.com/libraries/mediaelement/',
 	// this will allow the CDN to use Flash without restrictions
 	// (by default, this is set as `sameDomain`)
-	shimScriptAccess: 'always'
+	shimScriptAccess: 'always',
 	// more configuration
+	stretching: 'responsive'
 });
