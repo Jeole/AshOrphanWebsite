@@ -31,7 +31,7 @@
 						<span class="navbar-text d-none d-md-flex">/</span>
 						{% endif %}
 						<li class="nav-item {% if pagelang.lang == page.lang%}active{% endif %}">
-							<a href="{{ {{ site.url }}{{ pagelang.url }}" class="nav-link" title="View in {{pagelang.lang}}">{{ site.data.translations[pagelang.lang]._lang_name }}</a>
+							<a href="{{ site.url }}{{ pagelang.url }}" class="nav-link" title="View in {{pagelang.lang}}">{{ site.data.translations[pagelang.lang]._lang_name }}</a>
 						</li>
 					{% endfor %}
 				{% endif %}
