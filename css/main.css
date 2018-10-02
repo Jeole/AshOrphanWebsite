@@ -77,6 +77,8 @@ html {
 
 #header-title{
 	font-size: 3rem;
+	width:500px;
+	max-width:95vw;
 }
 
 .img-bio{
