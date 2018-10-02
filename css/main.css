@@ -113,12 +113,14 @@ img.release-cover{
 	width:450px;
 }
 
-.social-media-icon:hover{
-	opacity: 0.8;
+.social-media-icon{
+	color:#FFFFFF;
+	font-size: 25px;
+	font-weight: 1
 }
 
-.social-media-icon > img{
-	width: 32px;
+.social-media-icon:hover{
+	color:#CCCCCC;
 }
 
 .video{
