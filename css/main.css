@@ -127,6 +127,11 @@ img.release-cover{
 	width:450px;
 }
 
+#album-title{
+	width:400px;
+	max-width:95vw;
+}
+
 .ash-s-icon{
 	color:#FFFFFF;
 	font-size: 25px;
