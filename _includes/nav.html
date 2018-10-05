@@ -1,8 +1,8 @@
 
-<nav class="navbar navbar-expand-md  justify-content-between navbar-dark bg-transparent align-text-bottom text-center">
+<nav class="navbar navbar-expand-lg  justify-content-between navbar-dark bg-transparent align-text-bottom text-center">
     <div class="container-fluid">
         
-        <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0 justify-content-end">
+        <div class="navbar-collapse collapse dual-nav w-50 order-1 order-lg-0 justify-content-end">
             <ul class="navbar-nav">
                 <li class="nav-item {% if page.lang-ref == 'bio' %}active{% endif %}">
                     <a class="nav-link mx-4" href="bio">{{ site.data.translations[page.lang].bio }}</a>
@@ -12,7 +12,7 @@
                 </li>
             </ul>
         </div>
-        <a href="./" class="navbar-brand d-block text-center order-0 order-md-1 w-auto {% if page.url == '/' %} active {% endif %} mx-2" id="brand">Ash Orphan</a>
+        <a href="./" class="navbar-brand d-block text-center order-0 order-lg-1 w-auto {% if page.url == '/' %} active {% endif %} mx-2" id="brand">Ash Orphan</a>
         <div class="navbar-collapse collapse dual-nav w-50 order-2 justify-content-start">
             <ul class="nav navbar-nav">
                 <li class="nav-item {% if page.lang-ref == 'video' %}active{% endif %}">
@@ -23,12 +23,12 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
-				<div class="underline-separator d-md-none"></div>
+				<div class="underline-separator d-lg-none"></div>
 				{% assign pageslang=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
 				{% if pageslang.size > 1 %}
 					{% for pagelang in pageslang %}
 						{% if forloop.first == false %}
-						<span class="navbar-text d-none d-md-flex">/</span>
+						<span class="navbar-text d-none d-lg-flex">/</span>
 						{% endif %}
 						<li class="nav-item {% if pagelang.lang == page.lang%}active{% endif %}">
 							<a href="{{ pagelang.url | relative_url}}" class="nav-link" title="View in {{pagelang.lang}}">{{ site.data.translations[pagelang.lang]._lang_name }}</a>
